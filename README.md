@@ -1,2 +1,10 @@
-# spring-security
-Basic Tutorial for Spring Security
+# Spring Security
+## Basic Tutorial for Spring Security
+
+## Process:
+
+### 1: [INITIALIZING]
+TASKS:
+- [1.1] Create Spring Boot Project and build API
+- [1.2] Install Spring Security
+
