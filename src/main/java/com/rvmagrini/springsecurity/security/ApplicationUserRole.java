@@ -12,6 +12,10 @@ public enum ApplicationUserRole {
 			ApplicationUserPermission.STUDENT_READ,
 			ApplicationUserPermission.COURSE_WRITE, 
 			ApplicationUserPermission.COURSE_READ
+			)),
+	ADMINTRAINEE(Sets.newHashSet(
+			ApplicationUserPermission.STUDENT_READ,
+			ApplicationUserPermission.COURSE_READ
 			));
 	
 	private final Set<ApplicationUserPermission> permissions;

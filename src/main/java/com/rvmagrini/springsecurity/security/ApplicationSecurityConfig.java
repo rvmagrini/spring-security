@@ -27,7 +27,9 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		
-		http.authorizeRequests()
+		http
+			.csrf().disable()
+			.authorizeRequests()
 			.antMatchers("/", "index", "/css/*", "/js/*").permitAll()
 			.antMatchers("/school/**").hasRole(ApplicationUserRole.STUDENT.name())
 			.anyRequest()
@@ -41,18 +43,27 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected UserDetailsService userDetailsService() {
 
 		UserDetails johnMayallUser = User.builder()
-			.username("jmayall")
+			.username("mayall")
 			.password(passwordEncoder.encode("mayall123"))
-			.roles(ApplicationUserRole.STUDENT.name()) // ROLE_STUDENT
+			.roles(ApplicationUserRole.STUDENT.name()) 
 			.build();
 		
-		UserDetails rvmagriniUser = User.builder()
-				.username("rvmagrini")
-				.password(passwordEncoder.encode("admin123"))
-				.roles(ApplicationUserRole.ADMIN.name()) // ROLE_STUDENT
+		UserDetails principalUser = User.builder()
+				.username("principal")
+				.password(passwordEncoder.encode("principal123"))
+				.roles(ApplicationUserRole.ADMIN.name()) 
 				.build();
 		
-		return new InMemoryUserDetailsManager(johnMayallUser, rvmagriniUser);
+		UserDetails traineeUser = User.builder()
+				.username("trainee")
+				.password(passwordEncoder.encode("trainee123"))
+				.roles(ApplicationUserRole.ADMINTRAINEE.name()) 
+				.build();
+		
+		return new InMemoryUserDetailsManager(
+				johnMayallUser, 
+				principalUser,
+				traineeUser);
 		
 	}
 	

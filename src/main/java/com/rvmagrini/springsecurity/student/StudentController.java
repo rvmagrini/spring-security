@@ -19,6 +19,10 @@ public class StudentController {
 					new Student (3, "JJ Cale")
 					);
 	
+	@GetMapping
+	public List<Student> getAllStudents() {
+		return STUDENTS;
+	}
 	
 	@GetMapping("/student/{studentId}")
 	public Student getStudent(@PathVariable("studentId") Integer studentId) {

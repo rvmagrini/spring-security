@@ -24,3 +24,7 @@ TASKS:
 - [4.2] Create Roles and Permissions using Enums
 - [4.3] Implement Role Based Authentication
 
+### 5: [PERMISSION BASED AUTHENTICATION]
+TASKS:
+- [5.1] Disable CSRF, build and test fake Management API
+
