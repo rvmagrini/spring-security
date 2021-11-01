@@ -9,18 +9,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/students")
+@RequestMapping("/school")
 public class StudentController {
 	
 	private static final List<Student> STUDENTS = 
 			Arrays.asList(
-					new Student (1, "John Boham"),
+					new Student (1, "John Mayall"),
 					new Student (2, "Jimmy Nolen"),
-					new Student (3, "Jack Bezos")
+					new Student (3, "JJ Cale")
 					);
 	
 	
-	@GetMapping(path = "{studentId}")
+	@GetMapping("/student/{studentId}")
 	public Student getStudent(@PathVariable("studentId") Integer studentId) {
 		return STUDENTS.stream()
 				.filter(student -> studentId.equals(student.getStudentId()))
