@@ -27,4 +27,6 @@ TASKS:
 ### 5: [PERMISSION BASED AUTHENTICATION]
 TASKS:
 - [5.1] Disable CSRF, build and test fake Management API
+- [5.2] Implement Permission based Authentication
+
 
