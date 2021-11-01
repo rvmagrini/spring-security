@@ -21,4 +21,5 @@ TASKS:
 ### 4: [ROLES AND PERMISSIONS/AUTHORITIES]
 TASKS:
 - [4.1] Create Admin User
-- [4.2] Implement Role and Permissions using Enums
+- [4.2] Create Roles and Permissions using Enums
+- [4.3] Imeplement Role Base Authentication
