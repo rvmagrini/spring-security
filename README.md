@@ -11,4 +11,5 @@ TASKS:
 ### 1: [BASIC AUTH]
 TASKS:
 - [2.1] Implement Basic Auth 
+- [2.2] Add AntMatchers to whitelist URLs 
 
