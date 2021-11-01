@@ -17,3 +17,8 @@ TASKS:
 TASKS:
 - [3.1] Create User
 - [3.2] Encode Password
+
+### 4: [ROLES AND PERMISSIONS/AUTHORITIES]
+TASKS:
+- [4.1] Create Admin User
+- [4.2] Implement Role and Permissions using Enums
