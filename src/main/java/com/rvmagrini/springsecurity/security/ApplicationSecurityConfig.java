@@ -30,23 +30,18 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		
 		http
-			// Generating CSRF TOKEN:
-			// .csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
-			// .and()
-			.csrf().disable() // Disabling CSRF
+			.csrf().disable() 
 			.authorizeRequests()
 			.antMatchers("/", "index", "/css/*", "/js/*").permitAll()
 			.antMatchers("/school/**").hasRole(ApplicationUserRole.STUDENT.name())
-			// .antMatchers(HttpMethod.DELETE, "/management/school/**").hasAuthority(ApplicationUserPermission.COURSE_WRITE.getPermission())
-			// .antMatchers(HttpMethod.POST, "/management/school/**").hasAuthority(ApplicationUserPermission.COURSE_WRITE.getPermission())
-			// .antMatchers(HttpMethod.PUT, "/management/school/**").hasAuthority(ApplicationUserPermission.COURSE_WRITE.getPermission())
-			// .antMatchers(HttpMethod.GET, "/management/school/**").hasAnyRole(ApplicationUserRole.ADMIN.name(), ApplicationUserRole.ADMINTRAINEE.name())
 			.anyRequest()
 			.authenticated()
 			.and()
 			.formLogin()
 			.loginPage("/login").permitAll()
-			.defaultSuccessUrl("/courses", true);
+			.defaultSuccessUrl("/courses", true)
+			.and()
+			.rememberMe(); // defaults to 2 weeks
 	}
 
 	@Override

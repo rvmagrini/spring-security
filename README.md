@@ -37,5 +37,6 @@ TASKS:
 - [6.1] Switch to Form Based Auth
 - [6.2] Customize Login Page
 - [6.3] Redirect after success Login
+- [6.4] Implement Remember me option
 
 
