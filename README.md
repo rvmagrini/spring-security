@@ -32,3 +32,9 @@ TASKS:
 - [5.4] Generate CSRF Token to Frontend as Cookie
 - [5.5] Disable CSRF
 
+### 6: [FORM BASED AUTHENTICATION]
+TASKS:
+- [6.1] Switch to Form Based Auth
+- [6.2] Customize Login 
+
+

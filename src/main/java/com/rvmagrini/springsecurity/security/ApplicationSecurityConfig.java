@@ -34,7 +34,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 			// Generating CSRF TOKEN:
 			// .csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
 			// .and()
-			.csrf().disable()
+			.csrf().disable() // Disabling CSRF
 			.authorizeRequests()
 			.antMatchers("/", "index", "/css/*", "/js/*").permitAll()
 			.antMatchers("/school/**").hasRole(ApplicationUserRole.STUDENT.name())
@@ -45,7 +45,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 			.anyRequest()
 			.authenticated()
 			.and()
-			.httpBasic();
+			.formLogin();
 	}
 
 	@Override
