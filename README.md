@@ -35,6 +35,6 @@ TASKS:
 ### 6: [FORM BASED AUTHENTICATION]
 TASKS:
 - [6.1] Switch to Form Based Auth
-- [6.2] Customize Login 
+- [6.2] Customize Login Page
 
 
