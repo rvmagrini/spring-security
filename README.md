@@ -30,4 +30,5 @@ TASKS:
 - [5.2] Implement Permission based Authentication using AntMatchers
 - [5.3] Implement Permission based Authentication using PreAuthorize Annotation
 - [5.4] Generate CSRF Token to Frontend as Cookie
+- [5.5] Disable CSRF
 

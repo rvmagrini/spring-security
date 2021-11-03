@@ -31,8 +31,10 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		
 		http
-			.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
-			.and()
+			// Generating CSRF TOKEN:
+			// .csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+			// .and()
+			.csrf().disable()
 			.authorizeRequests()
 			.antMatchers("/", "index", "/css/*", "/js/*").permitAll()
 			.antMatchers("/school/**").hasRole(ApplicationUserRole.STUDENT.name())
