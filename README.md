@@ -49,3 +49,4 @@ TASKS:
 ### 8: [JSON WEB TOKENS]
 TASKS:
 - [8.1] Add Java JWT Library dependencies
+- [8.2] Fetch and validate credentials sent from Client
