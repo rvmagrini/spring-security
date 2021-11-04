@@ -51,4 +51,5 @@ TASKS:
 - [8.1] Add Java JWT Library dependencies
 - [8.2] Fetch and validate credentials sent from Client
 - [8.3] Generate Token and send it back to the Client
+- [8.4] Implement stateless Authentication Filter
 
