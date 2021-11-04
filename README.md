@@ -39,6 +39,6 @@ TASKS:
 - [6.3] Redirect after success Login
 - [6.4] Implement Remember me option
 - [6.5] Extend Session of Remember me
-
+- [6.6] Implement Logout and clear Cookies
 
 
