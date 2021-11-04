@@ -41,4 +41,6 @@ TASKS:
 - [6.5] Extend Session of Remember me
 - [6.6] Implement Logout and clear Cookies
 
-
+### 7: [DATABASE AUTHENTICATION]
+TASKS:
+- [7.1] Create UserDetails Class to construct Users
