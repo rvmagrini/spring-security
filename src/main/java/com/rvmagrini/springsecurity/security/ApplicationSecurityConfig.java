@@ -1,7 +1,5 @@
 package com.rvmagrini.springsecurity.security;
 
-import java.util.concurrent.TimeUnit;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,9 +11,9 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import com.rvmagrini.springsecurity.auth.ApplicationUserService;
+import com.rvmagrini.springsecurity.jwt.JwtTokenVerifier;
 import com.rvmagrini.springsecurity.jwt.JwtUsernameAndPasswordAuthenticationFilter;
 
 @Configuration
@@ -27,9 +25,8 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 	private final ApplicationUserService applicationUserService;
 	
 	@Autowired
-	public ApplicationSecurityConfig(
-			PasswordEncoder passwordEncoder, 
-			ApplicationUserService applicationUserService) {
+	public ApplicationSecurityConfig(PasswordEncoder passwordEncoder, 
+									ApplicationUserService applicationUserService) {
 		this.passwordEncoder = passwordEncoder;
 		this.applicationUserService = applicationUserService;
 	}
@@ -43,6 +40,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 			.and()
 			.addFilter(new JwtUsernameAndPasswordAuthenticationFilter(authenticationManager()))
+			.addFilterAfter(new JwtTokenVerifier(), JwtUsernameAndPasswordAuthenticationFilter.class)
 			.authorizeRequests()
 			.antMatchers("/", "index", "/css/*", "/js/*").permitAll()
 			.antMatchers("/school/**").hasRole(ApplicationUserRole.STUDENT.name())
