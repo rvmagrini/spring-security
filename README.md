@@ -45,3 +45,7 @@ TASKS:
 TASKS:
 - [7.1] Create UserDetails Class to construct Users
 - [7.2] Implement Service to fetch Users data from fake DB
+
+### 8: [JSON WEB TOKENS]
+TASKS:
+- [8.1] Add Java JWT Library dependencies
